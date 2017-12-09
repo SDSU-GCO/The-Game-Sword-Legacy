@@ -337,13 +337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4531ff2a79e8c8c4e9a70e7d5b874e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolModeInt: 3
+  toolModeInt: 1
   erosionTypeInt: 1
-  generatorTypeInt: 2
+  generatorTypeInt: 1
   isBrushOn: 0
   isBrushHidden: 0
   isBrushPainting: 0
-  brushPosition: {x: 1.259697, y: 46.08313, z: 267.4745}
+  brushPosition: {x: 112.140015, y: 45.107117, z: 578.9728}
   brushSize: 50
   brushOpacity: 1
   brushSoftness: 0.5
@@ -353,7 +353,7 @@ MonoBehaviour:
   thermalMinSlope: 1
   thermalFalloff: 0.5
   hydraulicTypeInt: 0
-  hydraulicIterations: 44
+  hydraulicIterations: 11
   hydraulicMaxSlope: 60
   hydraulicFalloff: 0.5
   hydraulicRainfall: 0.01
@@ -372,8 +372,8 @@ MonoBehaviour:
   tidalSeaLevel: 50
   tidalRangeAmount: 5
   tidalCliffLimit: 60
-  windIterations: 25
-  windDirection: 0
+  windIterations: 8
+  windDirection: 1.17
   windForce: 0.5
   windLift: 0.01
   windGravity: 0.5
@@ -397,8 +397,8 @@ MonoBehaviour:
   perlinAmplitude: 0.09
   perlinOctaves: 8
   perlinBlend: 1
-  smoothBlend: 1
-  smoothIterations: 0
+  smoothBlend: 0.25
+  smoothIterations: 1
   normaliseMin: 0
   normaliseMax: 1
   normaliseBlend: 1
