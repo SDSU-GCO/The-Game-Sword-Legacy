@@ -1,0 +1,5 @@
+Mitchell Petit
+2018-19-01
+
+git doesn't track empty directories, but we need it to.
+Don't delete this file unless there are other files in this directory.
