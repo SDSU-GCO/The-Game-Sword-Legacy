@@ -6,19 +6,19 @@ using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
 
 //[GENZO] Suggestion to change name to something more tangible
-namespace CheeseRenderNamespace
+namespace BreadSlicerRenderNamespace
 {
 	//Rendering Pipeline
-    public class CheeseRenderPipeline : RenderPipeline
+    public class BreadSlicerRenderPipeline : RenderPipeline
     {
 		//A reference to an instance of a pipeline asset
-        private CheesePipelineAsset assetReference;
+        private BreadSlicerPipelineAsset assetReference;
 
 		//Consturctor that gets a reference to an asset passed in.
-        public CheeseRenderPipeline(CheesePipelineAsset cheesePipelineAsset)
+        public BreadSlicerRenderPipeline(BreadSlicerPipelineAsset BreadSlicerPipelineAsset)
         {
 			//Store a pointer to the asset
-            assetReference = cheesePipelineAsset; //shouldn't be null
+            assetReference = BreadSlicerPipelineAsset; //shouldn't be null
         }
 
 		//Draws to screen?

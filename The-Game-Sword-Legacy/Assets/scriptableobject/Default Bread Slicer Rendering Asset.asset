@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 035596f8a459a4b40aab5af593c190ff, type: 3}
-  m_Name: DefaultRendering
+  m_Name: Default Bread Slicer Rendering Asset
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.5862067, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
