@@ -12,10 +12,10 @@ namespace BreadSlicerRenderNamespace
     public class BreadSlicerRenderPipeline : RenderPipeline
     {
 		//A reference to an instance of a pipeline asset
-        private BreadSlicerPipelineAsset assetReference;
+        private BreadSlicerRenderPipelineAsset assetReference;
 
 		//Consturctor that gets a reference to an asset passed in.
-        public BreadSlicerRenderPipeline(BreadSlicerPipelineAsset BreadSlicerPipelineAsset)
+        public BreadSlicerRenderPipeline(BreadSlicerRenderPipelineAsset BreadSlicerPipelineAsset)
         {
 			//Store a pointer to the asset
             assetReference = BreadSlicerPipelineAsset; //shouldn't be null
@@ -24,15 +24,23 @@ namespace BreadSlicerRenderNamespace
 		//Draws to screen?
         public override void Render(ScriptableRenderContext renderContext, Camera[] cameras)
         {
+            //base.Render(renderContext, cameras);
+
             CommandBuffer cb = CommandBufferPool.Get(); //Obtain CommandBuffer queue from pool.
 
-			//Call render for a camera?
-            foreach(Camera c in cameras){
+            //Call render for a camera?
+            foreach (Camera c in cameras)
+            { 
                 renderContext.SetupCameraProperties(c);                 //Does some interesting things(?)
                 cb.ClearRenderTarget(true, true, assetReference.color); //Set Color.
 
-                renderContext.ExecuteCommandBuffer(cb);                 //Execute commands in queue.
+                foreach(BreadSlicerRenderComponent BSRenderComponent in BreadSlicerRenderPipelineAsset.ListOfRenderComponent)
+                {
+                    cb.DrawRenderer(BSRenderComponent.BreadSlicerMeshRenderer, BSRenderComponent.BreadSlicerMeshRenderer.sharedMaterial, 0);
                 }
+
+                renderContext.ExecuteCommandBuffer(cb);                 //Execute commands in queue.
+            }
 
             base.Render(renderContext, cameras);                        //Render cameras.
             renderContext.Submit();                                     //Submit changes.

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 #if UNITY_EDITOR
@@ -10,14 +11,16 @@ using UnityEditor.ProjectWindowCallback;
 
 namespace BreadSlicerRenderNamespace
 {
-    public class BreadSlicerPipelineAsset : RenderPipelineAsset
+    public class BreadSlicerRenderPipelineAsset : RenderPipelineAsset
     {
 		//create a variable that holds a color.  This can be set via the editor.
         public Color color;
 
-		//if we are working in the unity editor
-	    #if UNITY_EDITOR
-	        [MenuItem("Assets/Create/Bread Slicer Rendering/Render Pipeline Asset")]//create a menue item
+        public static List<BreadSlicerRenderComponent> ListOfRenderComponent = new List<BreadSlicerRenderComponent>();
+
+        //if we are working in the unity editor
+#if UNITY_EDITOR
+        [MenuItem("Assets/Create/Bread Slicer Rendering/Render Pipeline Asset")]//create a menue item
 	        public static void MenuCreateBreadSlicerRenderAsset()//that runs this function
 	        {
 
@@ -44,7 +47,7 @@ namespace BreadSlicerRenderNamespace
             public override void Action(int instanceId, string pathName, string resourceFile)
             {
                 //we store an instance of our cheese pipeline asset into instance
-                BreadSlicerPipelineAsset instance = CreateInstance<BreadSlicerPipelineAsset>();
+                BreadSlicerRenderPipelineAsset instance = CreateInstance<BreadSlicerRenderPipelineAsset>();
 
 				//we default the color to black
                 instance.color = Color.black;
