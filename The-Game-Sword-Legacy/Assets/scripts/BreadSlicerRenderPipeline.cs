@@ -24,7 +24,7 @@ namespace BreadSlicerRenderNamespace
 		//Draws to screen?
         public override void Render(ScriptableRenderContext renderContext, Camera[] cameras)
         {
-            //base.Render(renderContext, cameras);
+            base.Render(renderContext, cameras);
 
             CommandBuffer cb = CommandBufferPool.Get(); //Obtain CommandBuffer queue from pool.
 

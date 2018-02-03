@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: default
   m_EditorClassIdentifier: Assembly-CSharp:BreadSlicerRenderNamespace:BreadSlicerRenderPipelineAsset
-  color: {r: 0, g: 0, b: 0, a: 1}
+  color: {r: 0.19852942, g: 0.19852942, b: 0.19852942, a: 1}
