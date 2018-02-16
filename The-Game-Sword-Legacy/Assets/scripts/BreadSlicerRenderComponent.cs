@@ -11,15 +11,15 @@ namespace BreadSlicerRenderNamespace
 
         //private GameObject i;
         public MeshRenderer BreadSlicerMeshRenderer { get; private set; }
-        // Use this for initialization
-        void Start() {
+        //// Use this for initialization
+        //void Start() {
 
-        }
+        //}
 
-        // Update is called once per frame
-        void Update() {
+        //// Update is called once per frame
+        //void Update() {
 
-        }
+        //}
 
         private void OnEnable()
         {
