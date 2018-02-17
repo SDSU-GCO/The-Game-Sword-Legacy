@@ -9,26 +9,26 @@ using UnityEditor.ProjectWindowCallback;
 
 
 
-namespace BreadSlicerRenderNamespace
+namespace FPRenderNamespace
 {
-    public class BreadSlicerRenderPipelineAsset : RenderPipelineAsset
+    public class FPRenderPipelineAsset : RenderPipelineAsset
     {
 		//create a variable that holds a color.  This can be set via the editor.
         public Color color;
 
-        public static List<BreadSlicerRenderComponent> ListOfRenderComponent = new List<BreadSlicerRenderComponent>();
+        public static List<FPRenderComponent> ListOfRenderComponent = new List<FPRenderComponent>();
 
         //if we are working in the unity editor
 #if UNITY_EDITOR
         [MenuItem("Assets/Create/Bread Slicer Rendering/Render Pipeline Asset")]//create a menue item
-	        public static void MenuCreateBreadSlicerRenderAsset()//that runs this function
+	        public static void MenuCreateFPRenderAsset()//that runs this function
 	        {
 
 				//Create a link to a 2d sprite Icon in the "Gizmos" folder.
 	            Texture2D icon = EditorGUIUtility.FindTexture("SwordIcon.png");
 
 				//Create a new scriptable object rendering pipeline witht the icon we just made in the assets folder.
-	            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance <CreateBreadSlicerPipelineAsset>(), "cheeseRender.asset", icon, null);
+	            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance <CreateFPPipelineAsset>(), "cheeseRender.asset", icon, null);
 	        }
 	    #endif
 
@@ -36,18 +36,18 @@ namespace BreadSlicerRenderNamespace
         protected override IRenderPipeline InternalCreatePipeline()
         {
 			//returns a copy of itself(pass by value)
-			return new BreadSlicerRenderPipeline(this);
+			return new FPRenderPipeline(this);]
         }
 
 		//create a new pipeline asset that inherits from EndNameEditAction.
 		//I have no clue what EndNameEditAction actually is or what it does.
-        public class CreateBreadSlicerPipelineAsset : EndNameEditAction
+        public class CreateFPPipelineAsset : EndNameEditAction
         {
 			//I don't know what calls this.  I also don't know what it does.
             public override void Action(int instanceId, string pathName, string resourceFile)
             {
                 //we store an instance of our cheese pipeline asset into instance
-                BreadSlicerRenderPipelineAsset instance = CreateInstance<BreadSlicerRenderPipelineAsset>();
+                FPRenderPipelineAsset instance = CreateInstance<FPRenderPipelineAsset>();
 
 				//we default the color to black
                 instance.color = Color.black;

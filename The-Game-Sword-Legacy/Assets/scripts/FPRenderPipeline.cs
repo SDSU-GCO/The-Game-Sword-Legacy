@@ -6,19 +6,19 @@ using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
 
 //[GENZO] Suggestion to change name to something more tangible
-namespace BreadSlicerRenderNamespace
+namespace FPRenderNamespace
 {
 	//Rendering Pipeline
-    public class BreadSlicerRenderPipeline : RenderPipeline
+    public class FPRenderPipeline : RenderPipeline
     {
 		//A reference to an instance of a pipeline asset
-        private BreadSlicerRenderPipelineAsset assetReference;
+        private FPRenderPipelineAsset assetReference;
 
 		//Consturctor that gets a reference to an asset passed in.
-        public BreadSlicerRenderPipeline(BreadSlicerRenderPipelineAsset BreadSlicerPipelineAsset)
+        public FPRenderPipeline(FPRenderPipelineAsset FPPipelineAsset)
         {
 			//Store a pointer to the asset
-            assetReference = BreadSlicerPipelineAsset; //shouldn't be null
+            assetReference = FPPipelineAsset; //shouldn't be null
         }
 
 		//Draws to screen?
@@ -34,9 +34,9 @@ namespace BreadSlicerRenderNamespace
                 renderContext.SetupCameraProperties(c);                 //Does some interesting things(?)
                 cb.ClearRenderTarget(true, true, assetReference.color); //Set Color.
 
-                foreach(BreadSlicerRenderComponent BSRenderComponent in BreadSlicerRenderPipelineAsset.ListOfRenderComponent)
+                foreach(FPRenderComponent FPRenderComponent in FPRenderPipelineAsset.ListOfRenderComponent)
                 {
-                    cb.DrawRenderer(BSRenderComponent.BreadSlicerMeshRenderer, BSRenderComponent.BreadSlicerMeshRenderer.sharedMaterial, 0);
+                    cb.DrawRenderer(FPRenderComponent.DefaultUnityMeshRenderer, FPRenderComponent.DefaultUnityMeshRenderer.sharedMaterial, 0);
                 }
 
                 renderContext.ExecuteCommandBuffer(cb);                 //Execute commands in queue.

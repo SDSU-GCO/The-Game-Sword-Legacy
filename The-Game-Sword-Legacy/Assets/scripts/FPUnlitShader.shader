@@ -1,6 +1,6 @@
 ﻿
 //Update your path name for selecting the shader here
-Shader "Bread Slicer Shaders/Unlit Opaque Color"
+Shader "Food Processor Shaders/Unlit Opaque Color"
 {
 	Properties
 	{
@@ -12,7 +12,7 @@ Shader "Bread Slicer Shaders/Unlit Opaque Color"
 		SubShader
 	{
 		//Update to use your render pipeline. It should be named after the runtime class (LightweightPipeline), not the asset (LightweightPipelineAsset)!
-		Tags{ "RenderType" = "Opaque" "RenderPipeline" = "BreadSlicerRenderPipeline" }
+		Tags{ "RenderType" = "Opaque" "RenderPipeline" = "FPRenderPipeline" }
 
 		Pass
 	{
