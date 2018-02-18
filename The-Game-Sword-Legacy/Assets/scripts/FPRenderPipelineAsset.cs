@@ -20,7 +20,7 @@ namespace FPRenderNamespace
 
         //if we are working in the unity editor
 #if UNITY_EDITOR
-        [MenuItem("Assets/Create/Bread Slicer Rendering/Render Pipeline Asset")]//create a menue item
+        [MenuItem("Assets/Create/Food Processor Rendering/Render Pipeline Asset")]//create a menue item
 	        public static void MenuCreateFPRenderAsset()//that runs this function
 	        {
 
@@ -36,7 +36,7 @@ namespace FPRenderNamespace
         protected override IRenderPipeline InternalCreatePipeline()
         {
 			//returns a copy of itself(pass by value)
-			return new FPRenderPipeline(this);]
+			return new FPRenderPipeline(this);
         }
 
 		//create a new pipeline asset that inherits from EndNameEditAction.
